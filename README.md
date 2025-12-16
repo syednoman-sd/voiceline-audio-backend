@@ -106,3 +106,15 @@ Code is organized into packages:
 - `sheets` - Google Sheets integration
 - `common` - config and errors
 - `middleware` - CORS and logging
+
+## What I had improve with more time
+
+Kept this under 4 hours, but here is what is missing:
+
+- I skipped tests to prioritize features, but normally I had add unit tests for the parsing logic and integration tests for the API. Also, the Google Sheets sync currently fails silently. I had strictly add retry logic so data is not lost if the Google API hiccups.
+
+- Currently, the app loads files into memory and processes them synchronously. For a real-world scenario, I had implement file streaming to handle large audio and move the processing to a background queue (Redis) to avoid blocking the main thread.
+
+- The endpoint is currently open for the sake of the demo. I had implement Auth middleware, sanitize inputs before sending them to the LLM and validate actual file content (magic bytes) rather than just trusting the extension.
+
+- Sheets is fun for a demo, but we had obviously swap that for a real DB (Postgres) and offload audio storage to S3 with proper structured logging and monitoring.
