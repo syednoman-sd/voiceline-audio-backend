@@ -1,0 +1,36 @@
+# Environment variables
+.env
+
+# Google credentials
+credentials.json
+
+# macOS
+.DS_Store
+
+# Temporary files
+/tmp
+*.tmp
+
+# Audio uploads
+/uploads
+
+# Go build files
+voiceline-audio-backend
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary
+*.test
+
+# Output of the go coverage tool
+*.out
+
+# Dependency directories
+vendor/
+
+# Go workspace file
+go.work
+
